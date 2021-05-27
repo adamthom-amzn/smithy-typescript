@@ -17,9 +17,7 @@ import { LengthTests } from "@aws-smithy/typescript-integ-test-types";
 
 describe("length constraints", () => {
   it("work for strings", () => {
-    expect(
-      LengthTests.validate({ minMaxLengthString: "much longer than 7" })
-    ).toEqual([
+    expect(LengthTests.validate({ minMaxLengthString: "much longer than 7" })).toEqual([
       {
         constraintType: "length",
         constraintValues: [2, 7],
@@ -59,9 +57,7 @@ describe("length constraints", () => {
     ]);
   });
   it("also work on map keys", () => {
-    expect(
-      LengthTests.validate({ minMaxLengthMap: { a: 1, bcd: 2, cde: 3 } })
-    ).toEqual([
+    expect(LengthTests.validate({ minMaxLengthMap: { a: 1, bcd: 2, cde: 3 } })).toEqual([
       {
         constraintType: "length",
         constraintValues: [2, 7],
@@ -105,9 +101,7 @@ describe("length constraints", () => {
     ]);
   });
   it("also work on list values", () => {
-    expect(
-      LengthTests.validate({ minMaxLengthList: ["abcdefghijk", "def"] })
-    ).toEqual([
+    expect(LengthTests.validate({ minMaxLengthList: ["abcdefghijk", "def"] })).toEqual([
       {
         constraintType: "length",
         constraintValues: [2, 7],
@@ -125,9 +119,7 @@ describe("length constraints", () => {
         memberName: "minMaxLengthBlob",
       },
     ]);
-    expect(
-      LengthTests.validate({ minMaxLengthBlob: Buffer.of(1, 2, 3, 4, 5) })
-    ).toEqual([
+    expect(LengthTests.validate({ minMaxLengthBlob: Buffer.of(1, 2, 3, 4, 5) })).toEqual([
       {
         constraintType: "length",
         constraintValues: [2, 4],

@@ -13,11 +13,11 @@
  *  permissions and limitations under the License.
  */
 
-import { TestInput, Enum } from "@aws-smithy/typescript-integ-test-types";
+import { Enum, TestInput } from "@aws-smithy/typescript-integ-test-types";
 
 describe("enum constraints", () => {
   const validEnum: Enum = "valueA";
-  const invalidEnum: string = "invalidEnum";
+  const invalidEnum = "invalidEnum";
   const expectedFailureBase = {
     constraintType: "enum",
     constraintValues: ["valueA", "valueB"],
