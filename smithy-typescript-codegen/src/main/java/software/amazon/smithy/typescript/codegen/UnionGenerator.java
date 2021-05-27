@@ -270,6 +270,7 @@ final class UnionGenerator implements Runnable {
         structuredMemberWriter.writeMemberValidatorCache(writer, "memberValidators");
 
         writer.addImport("ValidationFailure", "__ValidationFailure", "@aws-smithy/server-common");
+        writer.writeDocs("@internal");
         writer.openBlock("export const validate = ($L: $L): __ValidationFailure[] => {", "}",
                 "obj", symbol.getName(),
                 () -> {
